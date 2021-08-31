@@ -1,6 +1,7 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
-const refs = {
+
+const imagesLibrary = {
   itemsList: document.querySelector('.gallery'),
 };
 
@@ -15,19 +16,21 @@ function makeGalleryItems(galleryItems) {
     .join('');
 }
 
-refs.itemsList.innerHTML = makeGalleryItems(galleryItems);
+imagesLibrary.itemsList.innerHTML = makeGalleryItems(galleryItems);
 
-let gallery = new SimpleLightbox('.gallery a', {
+new SimpleLightbox('.gallery a', {
   showCounter: false,
   disableScroll: false,
   captionsData: 'alt',
   captionDelay: 250,
+  loop: true,
 });
+// console.log(gallery);
 
-refs.itemsList.addEventListener('click', onImgClick);
+// imagesLibrary.itemsList.addEventListener('click', onImgClick);
 
-function onImgClick(evt) {
-  evt.preventDefault();
+// function onImgClick(e) {
+//   e.preventDefault();
 
-  gallery.open('.gallery');
-}
+//   gallery.open('.gallery');
+// }
